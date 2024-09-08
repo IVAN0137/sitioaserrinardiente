@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    animation: slidein 100s infinite alternate;
+}
+
+@keyframes slidein {
+    from { background-position: top; background-size: 3000px; }
+    to { background-position: -100px 0px; background-size: 2750px; }
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    height: 50vw;
+    max-height: 500px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #f0f0f5, #d6d6e0);
+    transition: background 0.3s ease-in-out;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0.05, 0.36, 1);
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.8s ease-in-out;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.carousel-indicators button {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active,
+.carousel-indicators button:hover {
+    background-color: #333;
+}
+
+.video-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    max-width: 75vw; /* Ocupa todo el ancho de la pantalla */
+    max-height: 1200vh; /* Limita la altura máxima a un porcentaje de la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Ajusta el borde si es necesario */
+}
+
+
+
+.video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+}
+
+.info-section,
+.specs-section,
+.oven-section,
+.burn-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section ul li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+.specs-section,
+.oven-section,
+.burn-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.specs-section p,
+.oven-section p,
+.burn-section p,
+.info-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-gallery img {
+    max-width: 45%;
+    margin: 10px;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-container,
+    .video-container,
+    .info-section,
+    .specs-section,
+    .oven-section,
+    .burn-section {
+        width: 95%;
+    }
+
+    .carousel-container {
+        height: 60vw;
+    }
+
+    .carousel-item img {
+        border-radius: 10px;
+    }
+
+    .image-gallery img {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1201px) {
+    .carousel-container {
+        height: 40vw;
+    }
+}
